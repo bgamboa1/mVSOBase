@@ -1,0 +1,28 @@
+GLPSOL: GLPK LP/MIP Solver, v4.65
+Parameter(s) specified in the command line:
+ --log result\mimo-example-20180503T1020\scenario_base.log --write C:\Users\Billy\AppData\Local\Temp\tmppmtvldtd.glpk.raw
+ --wglp C:\Users\Billy\AppData\Local\Temp\tmpatfu6y9n.glpk.glp --cpxlp C:\Users\Billy\AppData\Local\Temp\tmpoqhx_up6.pyomo.lp
+Reading problem data from 'C:\Users\Billy\AppData\Local\Temp\tmpoqhx_up6.pyomo.lp'...
+15201 rows, 20208 columns, 70610 non-zeros
+136435 lines were read
+Writing problem data to 'C:\Users\Billy\AppData\Local\Temp\tmpatfu6y9n.glpk.glp'...
+112466 lines were written
+GLPK Simplex Optimizer, v4.65
+15201 rows, 20208 columns, 70610 non-zeros
+Preprocessing...
+9505 rows, 15280 columns, 55200 non-zeros
+Scaling...
+ A: min|aij| =  2.463e-04  max|aij| =  5.214e+01  ratio =  2.117e+05
+GM: min|aij| =  2.477e-01  max|aij| =  4.038e+00  ratio =  1.630e+01
+EQ: min|aij| =  6.134e-02  max|aij| =  1.000e+00  ratio =  1.630e+01
+Constructing initial basis...
+Size of triangular part is 9504
+      0: obj =  -8.785144755e+10 inf =   1.058e+06 (100)
+    776: obj =   3.852626214e+10 inf =   1.023e-12 (0) 5
+*  7148: obj =   1.317292754e+09 inf =   3.256e-12 (3463) 47
+* 10374: obj =   1.223447320e+09 inf =   1.505e-12 (0) 26
+OPTIMAL LP SOLUTION FOUND
+Time used:   8.0 secs
+Memory used: 22.9 Mb (24014864 bytes)
+Writing basic solution to 'C:\Users\Billy\AppData\Local\Temp\tmppmtvldtd.glpk.raw'...
+35418 lines were written
