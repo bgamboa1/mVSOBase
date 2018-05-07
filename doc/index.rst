@@ -59,7 +59,7 @@ Features
   a focus on optimal storage sizing and use.
 * It finds the minimum cost energy system to satisfy given demand timeseries 
   for possibly multiple commodities (e.g. electricity).
-* By default, operates on hourly-spaced timesteps (configurable).
+* By default, operates on 15-minute-spaced timesteps (configurable).
 * Thanks to `pandas`_, complex data analysis code is short and extensible.
 * The model itself is quite small thanks to relying on the `Pyomo`_
   package.

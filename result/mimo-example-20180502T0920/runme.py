@@ -97,7 +97,7 @@ def run_scenario(input_file, timesteps, scenario, result_dir,
 
     Args:
         input_file: filename to an Excel spreadsheet for urbs.read_excel
-        timesteps: a list of timesteps, e.g. range(0,8761)
+        timesteps: a list of timesteps, e.g. range(0,35041)
         scenario: a scenario function that modifies the input data dict
         result_dir: directory name for result spreadsheet and plots
         plot_tuples: (optional) list of plot tuples (c.f. urbs.result_figures)
@@ -160,7 +160,7 @@ if __name__ == '__main__':
     shutil.copy(__file__, result_dir)
 
     # simulation timesteps
-    (offset, length) = (3500, 168)  # time step selection
+    (offset, length) = (0, 96)  # time step selection
     timesteps = range(offset, offset+length+1)
 
     # plotting commodities/sites
@@ -171,7 +171,7 @@ if __name__ == '__main__':
         (['North', 'Mid', 'South'], 'Elec')]
 
     # optional: define names for sites in plot_tuples
-    plot_sites_name = {('North', 'Mid', 'South'):'All'}
+    plot_sites_name = {('North', 'Mid', 'South'): 'All'}
 
     # detailed reporting commodity/sites
     report_tuples = [
