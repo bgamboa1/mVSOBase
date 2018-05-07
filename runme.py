@@ -114,7 +114,7 @@ def run_scenario(input_file, timesteps, scenario, result_dir,
     return prob
 
 if __name__ == '__main__':
-    input_file = 'mimo-example.xlsx'
+    input_file = 'macerich.xlsx'
     result_name = os.path.splitext(input_file)[0]  # cut away file extension
     result_dir = prepare_result_directory(result_name)  # name + time stamp
 
@@ -124,7 +124,7 @@ if __name__ == '__main__':
     shutil.copy(__file__, result_dir)
 
     # simulation timesteps
-    (offset, length) = (3500, 168)  # time step selection
+    (offset, length) = (0, 192)  # time step selection
     timesteps = range(offset, offset+length+1)
 
     # plotting commodities/sites
@@ -134,7 +134,7 @@ if __name__ == '__main__':
         (['Node_2', 'Node_1'], 'Elec')]
 
     # optional: define names for sites in plot_tuples
-    plot_sites_name = {('Node_2', 'Node_1'):'All'}
+    plot_sites_name = {('Node_2', 'Node_1'): 'All'}
 
     # detailed reporting commodity/sites
     report_tuples = [

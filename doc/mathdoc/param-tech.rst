@@ -103,11 +103,11 @@ Technical Parameters
 
 General Technical Parameters
 ----------------------------
-**Weight**, :math:`w`, ``weight``: The parameter :math:`w` helps to scale variable costs and emissions from the length of simulation, that the energy system model is being observed, to an annual result. This parameter represents the rate of a year (8760 hours) to the observed time span. The observed time span is calculated by the product of number of time steps of the set :math:`T` and the time step duration. In script ``model.py`` this parameter is defined by the model parameter ``weight`` and initialized by the following code fragment:
+**Weight**, :math:`w`, ``weight``: The parameter :math:`w` helps to scale variable costs and emissions from the length of simulation, that the energy system model is being observed, to an annual result. This parameter represents the rate of a year (35040 15-minute intervals) to the observed time span. The observed time span is calculated by the product of number of time steps of the set :math:`T` and the time step duration. In script ``model.py`` this parameter is defined by the model parameter ``weight`` and initialized by the following code fragment:
 ::
 
     m.weight = pyomo.Param(
-        initialize=float(8760) / (len(m.tm) * dt),
+        initialize=float(35040) / (len(m.tm) * dt),
         doc='Pre-factor for variable costs and emissions for an annual result')
 		
 
@@ -116,7 +116,7 @@ General Technical Parameters
 
     m.dt = pyomo.Param(
         initialize=dt,
-        doc='Time step duration (in hours), default: 1')
+        doc='Time step duration (in 15-minutes), default: 1')
 		
 
 Commodity Technical Parameters

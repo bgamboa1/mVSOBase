@@ -5,7 +5,7 @@ from .modelhelper import *
 from .input import *
 
 
-def create_model(data, timesteps=None, dt=1, dual=False):
+def create_model(data, timesteps=None, dt=0.25, dual=False):
     """Create a pyomo ConcreteModel MvsoModel object from given input data.
 
     Args:
@@ -207,13 +207,13 @@ def create_model(data, timesteps=None, dt=1, dual=False):
 
     # Parameters
 
-    # weight = length of year (hours) / length of simulation (hours)
+    # weight = length of year (quarter-hour) / length of simulation (quarter-hour)
     # weight scales costs and emissions from length of simulation to a full
     # year, making comparisons among cost types (invest is annualized, fixed
     # costs are annual by default, variable costs are scaled by weight) and
     # among different simulation durations meaningful.
     m.weight = pyomo.Param(
-        initialize=float(8760) / (len(m.tm) * dt),
+        initialize=float(8760*4) / (len(m.tm) * dt),
         doc='Pre-factor for variable costs and emissions for an annual result')
 
     # dt = spacing between timesteps. Required for storage equation that
@@ -221,7 +221,7 @@ def create_model(data, timesteps=None, dt=1, dual=False):
     # quantities that start with "e_")
     m.dt = pyomo.Param(
         initialize=dt,
-        doc='Time step duration (in hours), default: 1')
+        doc='Time step duration (in 15-minute intervals), default: 0.25')
 
     # Variables
 
