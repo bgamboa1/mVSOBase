@@ -2,8 +2,8 @@ Overview
 --------
 
 MvsoModel consists of several **model entities**. These are commodities, processes,
-transmission and storage. Demand and intermittent commodity supply through are 
-modelled through time series datasets.
+transmission and storage. Demand and intermittent commodity supply though are 
+modeled through time series datasets.
 
 Commodity
 ^^^^^^^^^
@@ -97,7 +97,7 @@ Intermittent Supply
 Each combination ``(site, supim commodity)`` must be supplied with one
 timeseries, normalised to a maximum value of 1 relative to the installed
 capacity of a process using this commodity as input. For example, a wind power
-timeseries should reach value 1, when the wind speed exceeds the modelled wind
+timeseries should reach value 1, when the wind speed exceeds the modeled wind
 turbine's design wind speed is exceeded. This implies that any non-linear
 behaviour of intermittent processes can already be incorporated while preparing
 this timeseries.

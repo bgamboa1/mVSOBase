@@ -40,14 +40,14 @@ def create_model(data, timesteps=None, dt=0.25, dual=False):
         ordered=True,
         doc='Set of timesteps')
 
-    # modelled (i.e. excluding init time step for storage) time steps
+    # modeled (i.e. excluding init time step for storage) time steps
     m.tm = pyomo.Set(
         within=m.t,
         initialize=m.timesteps[1:],
         ordered=True,
-        doc='Set of modelled timesteps')
+        doc='Set of modeled timesteps')
 
-    # modelled Demand Side Management time steps (downshift):
+    # modeled Demand Side Management time steps (downshift):
     # downshift effective in tt to compensate for upshift in t
     m.tt = pyomo.Set(
         within=m.t,

@@ -110,7 +110,7 @@ Commodity Economical Parameters
   
   :return: a Pandas DataFrame with entities as columns and timesteps as index
   
-  Calculate commodity prices for each modelled timestep.
+  Calculate commodity prices for each modeled timestep.
   Checks whether the input is a float. If it is a float it gets the input value as a fix value for commodity price. Otherwise if the input value is not a float, but a string, it extracts the price coefficient from the string and  multiplies it with a timeseries of commodity price variables.
 
 Process Economical Parameters

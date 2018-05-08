@@ -4,28 +4,32 @@ Buy-Sell Documentation
 **********************
 
 This documentation explains the buy-sell-price feature of MvsoModel. With it one can
-model time variant electricity prices from energy exchanges.
+model time variant electricity prices defined in utility tariffs or wholesale energy markets.
 
 Introduction
 ============
 
-The prices are independent of the amount of electricity purchased and fed in as
-there is no feedback. The size of the modelled market has to be considered
-small relative to the surrounding market.
-To use this feature your excel input file needs an additional
+The prices are independent of the amount of electricity purchased and fed-in. mVSO also assumes
+that the microgrids modeled in it are small compared to the markets it participates in; the 
+microgrid will not set utility or wholesale prices.
+To use this feature the excel input file has an additional
 **Buy-Sell-Price** sheet with the columns ``t`` containing the timesteps and
-columns specifying your buy- and sellable commodities, e.g.,
-``Elec buy`` and ``Elec sell`` in the mimo-example. The entries then set time
-resolved buy and sell prices by default in $ per kWh. In the **Commodity** sheet
-the new tradable commodities have to be set as type ``Buy`` or ``Sell``. The
-price column in the **Commodity** sheet is then reinterpreted as a factor
-multiplied to the given price timeseries. For an actual use of the tradeable
-commodities they have to be converted into demand commodities in a separate
-process.
+columns specifying the utility tariff prices. Since there is not always a one-to-one relationship between the 
+prices of energy bought or sold to the grid we provide flexibilty and establish columns named buy and sell.
+In most cases these columns will hold the same prices but in the case of California Net Energy Metering rules
+for example there is slight difference between the buy and sell prices.
+The prices in this tab correspond to the ``Elec buy`` and ``Elec sell`` in the commodity tab of the excel input file.
+The units used in the **Buy-Sell-Price** tab by default are in $ per kWh and $/kW.
+In the **Commodity** sheet the tradable commodities have to be set as type ``Buy`` or ``Sell``.
+The price column in the **Commodity** sheet can be used as a factor
+multiplied to the given price timeseries; this will mainly be used to explore the effect of rate escalation
+on project feasibility. The tradeable commodities have to be converted into demand commodities in a separate
+process handled in the MvsoModel.
+
 For a more detailed description of the implementation have a look at the
 Mathematical Documentation. 
 
-Exemplification
+Example
 ===============
 
 This section contains prototypical scenarios illustrating the system behaviour
@@ -33,7 +37,7 @@ with time variant prices.
 Electricity can be moved *locally* with transmission losses and *temporally*
 with storage losses.
 
-Fix Capacities - Fix Prices
+Fixed Capacities - Fixed Prices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 All process, transmission and storage capacities and prices are predetermined
 and constant.
@@ -67,7 +71,7 @@ grid with the continental grid. Both capacities and prices are fix.
     Purchase,      1.00, 1000, 1000, **15/45/75**, 0, 15/45/75
     Feed-in,       1.00, 1000, 1000, **15/45/75**, 0, 15/45/75
 
-The modelled timespan is 6 weeks with different fix prices each. In week 1
+The modeled timespan is 6 weeks with different fix prices each. In week 1
 on the fourth day energy is purchased, because it is neccessary to cover
 the demand. In week 2 the sell price is higher than the variable costs of the
 nuclear plant, but lower than the variable costs of the cheapest not needed
@@ -85,7 +89,7 @@ enough to even replace energy produced by the nuclear plant.
 Fix Capacities - Variable Prices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 All process, transmission and storage capacities are predetermined and
-constant, prices are varying over the modelled timespan.
+constant, prices are varying over the modeled timespan.
 
 When is electricity purchased?
 
@@ -118,7 +122,7 @@ are varying.
     Purchase,       1.00, 1000, 1000, **50-75**,   0, 50-75
     Feed-in,        1.00, 1000, 1000, **35-65**,   0, 35-65
 
-The modelled timespan is 7 days. The buy price varies around the variable costs
+The modeled timespan is 7 days. The buy price varies around the variable costs
 of the gas plant. But except for day 3 purchase is only a profitable substitute
 for energy from the gas plant at timesteps it is not needed. The sell price
 varies around the variable costs of the coal plant. But similar to the buy
@@ -146,7 +150,7 @@ margin it is not done.
 Variable Capacities - Variable Prices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 All process, transmission and storage capacities are variable and determined at
-optimal total cost, prices are varying over the modelled timespan.
+optimal total cost, prices are varying over the modeled timespan.
 
 When is electricity purchased?
 
