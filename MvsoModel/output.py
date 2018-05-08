@@ -64,7 +64,7 @@ def get_timeseries(instance, com, sites, timesteps=None):
         instance: a MvsoModel model instance
         com: a commodity name
         sites: a site name or list of site names
-        timesteps: optional list of timesteps, default: all modelled timesteps
+        timesteps: optional list of timesteps, default: all modeled timesteps
 
     Returns:
         a tuple of (created, consumed, storage, imported, exported, dsm) with

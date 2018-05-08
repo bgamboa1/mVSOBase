@@ -20,7 +20,7 @@ Elementary sets
 	Set                      Description
 	======================== =====================
 	:math:`t \in T`          Timesteps
-	:math:`t \in T_\text{m}` Modelled Timesteps
+	:math:`t \in T_\text{m}` modeled Timesteps
 	:math:`v \in V`          Sites
 	:math:`c \in C`          Commodities
 	:math:`q \in Q`          Commodity Types
@@ -56,12 +56,12 @@ Where:
 * `Ordered`: A boolean value that indicates whether the set is ordered.
 * `Doc`: A string describing the set.
 
-Modelled Timesteps
+modeled Timesteps
 ^^^^^^^^^^^^^^^^^^
 
-The Set, **modelled timesteps**, is a subset of the time steps set. The difference between modelled
+The Set, **modeled timesteps**, is a subset of the time steps set. The difference between modeled
 timesteps set and the timesteps set is that the initial timestep :math:`t_0` is not included.
-All other features of the set time steps also apply to the set of modelled timesteps. This set
+All other features of the set time steps also apply to the set of modeled timesteps. This set
 is later required to facilitate the definition of the storage state equation.
 In script ``MvsoModel.py`` this set is defined by the set ``tm`` and initialized by the code fragment:
 
@@ -71,7 +71,7 @@ In script ``MvsoModel.py`` this set is defined by the set ``tm`` and initialized
         within=m.t,
         initialize=m.timesteps[1:],
         ordered=True,
-        doc='Set of modelled timesteps')
+        doc='Set of modeled timesteps')
 		
 Where:
 
@@ -98,7 +98,7 @@ Commodities
 
 As explained in the Overview section, **commodities** are goods that can be
 generated, stored, transmitted or consumed. The set of Commodities represents all goods that
-are relevant to the modelled energy system, such as all energy carriers, inputs, outputs,
+are relevant to the modeled energy system, such as all energy carriers, inputs, outputs,
 intermediate substances. (e.g Coal, CO2, Electric, Wind) By default, commodities are given by their
 energy content (kWh). Usage of some commodities are limited by a maximum value or maximum value
 per timestep due to their availability or restrictions, also some commodities have a price that
@@ -128,7 +128,7 @@ Processes
 ^^^^^^^^^
 
 One of the most important elements of an energy system is the **process**. A process :math:`p` can be defined by
-the action of changing one or more forms of energy to others. In our modelled energy system,
+the action of changing one or more forms of energy to others. In our modeled energy system,
 processes convert input commodities into output commodities. Process technologies are represented by
 the set processes :math:`P`. Different processes technologies have fixed input and output commodities. These input and output commodities
 can be either single or multiple regardless of each other. Some example members of this set can be:

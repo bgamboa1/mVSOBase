@@ -57,7 +57,7 @@ Create model
   Returns a Pyomo `ConcreteModel` object.
   
   :param dict data: input like created by :func:`read_excel`
-  :param list timesteps: consecutive list of modelled timesteps
+  :param list timesteps: consecutive list of modeled timesteps
   
   :return: MvsoModel model object
   
@@ -138,7 +138,7 @@ following two **medium-level** functions. They retrieve all time-dependent and
   :param prob: MvsoModel model instance
   :param str com: commodity name
   :param str sit: site name
-  :param list timesteps: timesteps, default: all modelled timesteps
+  :param list timesteps: timesteps, default: all modeled timesteps
 
   :return: tuple of timeseries (created, consumed, storage, imported, exported) 
     tuple of DataFrames timeseries. These are:

@@ -132,7 +132,7 @@ def dsm_recovery(timestep, time, recov):
         recov: allowed dsm recovery in particular site and commodity
 
     Returns:
-        A list of possible time indices which are within the modelled time
+        A list of possible time indices which are within the modeled time
         area
     """
 

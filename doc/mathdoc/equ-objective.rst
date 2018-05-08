@@ -6,7 +6,7 @@
 Objective function
 ^^^^^^^^^^^^^^^^^^
 
-The variable total system cost :math:`\zeta` is calculated by the cost function. The cost function is the objective function of the optimization  model. Minimizing the value of the variable total system cost would give the most reasonable solution for the modelled energy system  The formula of the cost function expressed in mathematical notation is as following:
+The variable total system cost :math:`\zeta` is calculated by the cost function. The cost function is the objective function of the optimization  model. Minimizing the value of the variable total system cost would give the most reasonable solution for the modeled energy system  The formula of the cost function expressed in mathematical notation is as following:
 
 .. math::
     \zeta = \zeta_\text{inv} + \zeta_\text{fix} + \zeta_\text{var} + \zeta_\text{fuel} + \zeta_\text{rev} + \zeta_\text{pur} + \zeta_\text{startup}
