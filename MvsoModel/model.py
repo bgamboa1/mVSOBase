@@ -12,7 +12,7 @@ def create_model(data, timesteps=None, dt=0.25, dual=False):
         data: a dict of 6 DataFrames with the keys 'commodity', 'process',
             'transmission', 'storage', 'demand' and 'supim'.
         timesteps: optional list of timesteps, default: demand timeseries
-        dt: timestep duration in hours (default: 1)
+        dt: timestep duration in 15-minute intervals (default: 0.25)
         dual: set True to add dual variables to model (slower); default: False
 
     Returns:

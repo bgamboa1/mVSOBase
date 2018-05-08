@@ -15,15 +15,15 @@ microgrid will not set utility or wholesale prices.
 To use this feature the excel input file has an additional
 **Buy-Sell-Price** sheet with the columns ``t`` containing the timesteps and
 columns specifying the utility tariff prices. Since there is not always a one-to-one relationship between the 
-prices of energy bought or sold to the grid we provide flexibilty and establish columns named buy and sell.
+prices of energy purchased from or sold to the grid we provide flexibilty and establish columns named buy and sell.
 In most cases these columns will hold the same prices but in the case of California Net Energy Metering rules
 for example there is slight difference between the buy and sell prices.
-The prices in this tab correspond to the ``Elec buy`` and ``Elec sell`` in the commodity tab of the excel input file.
+The prices in this tab correspond to the ``Elec buy`` and ``Elec sell`` commodities in the commodity tab of the excel input file.
 The units used in the **Buy-Sell-Price** tab by default are in $ per kWh and $/kW.
 In the **Commodity** sheet the tradable commodities have to be set as type ``Buy`` or ``Sell``.
 The price column in the **Commodity** sheet can be used as a factor
 multiplied to the given price timeseries; this will mainly be used to explore the effect of rate escalation
-on project feasibility. The tradeable commodities have to be converted into demand commodities in a separate
+during project feasibility or explore price sensitivities etc. The tradeable commodities have to be converted into demand commodities in a separate
 process handled in the MvsoModel.
 
 For a more detailed description of the implementation have a look at the

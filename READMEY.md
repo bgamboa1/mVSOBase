@@ -1,6 +1,6 @@
 # MvsoModel
 
-MvsoModel is a [linear programming](https://en.wikipedia.org/wiki/Linear_programming) optimisation model for capacity expansion planning and unit commitment for distributed energy systems. Its name, latin for city, stems from its origin as a model for optimisation for urban energy systems. Since then, it has been adapted to multiple scales from neighbourhoods to continents.
+MvsoModel is a [linear programming](https://en.wikipedia.org/wiki/Linear_programming) optimization model for capacity expansion planning and unit commitment for microgrids. mVSO is an acronym, that stems from Microgrid Value Stream Optimization. It is capable of optimizing across any number of nodes/sites/meters across any number of distributed energy resources and across any number of utility tariffs, wholesale eneryg prices etc.
 
 [![Documentation Status](https://readthedocs.org/projects/MvsoModel/badge/?version=latest)](http://MvsoModel.readthedocs.io/en/latest/?badge=latest)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.594200.svg)](https://doi.org/10.5281/zenodo.594200)
@@ -10,14 +10,14 @@ MvsoModel is a [linear programming](https://en.wikipedia.org/wiki/Linear_program
 
   * MvsoModel is a linear programming model for multi-commodity energy systems with a focus on optimal storage sizing and use.
   * It finds the minimum cost energy system to satisfy given demand timeseries for possibly multiple commodities (e.g. electricity).
-  * By default, operates on hourly-spaced timesteps (configurable).
+  * By default, operates on quarter-hourly-spaced timesteps (configurable).
   * Thanks to [Pandas](https://pandas.pydata.org), complex data analysis is easy.
   * The model itself is quite small thanks to relying on package [Pyomo](http://www.pyomo.org/).
   * The small codebase includes reporting and plotting functionality.
 
 ## Screenshots
 
-<a href="doc/img/plot.png"><img src="doc/img/plot.png" alt="Timeseries plot of 8 days of electricity generation in vertex 'North' in scenario_all_together in hourly resolution: Hydro and biomass provide flat base load of about 50% to cover the daily fluctuating load, while large share of wind and small part photovoltaic generation cover the rest, supported by a day-night storage." style="width:400px"></a>
+<a href="doc/img/plot.png"><img src="doc/img/plot.png" alt="Timeseries plot of 8 days of electricity generation in vertex 'North' in scenario_all_together in quarter-hourly resolution: Hydro and biomass provide flat base load of about 50% to cover the daily fluctuating load, while large share of wind and small part photovoltaic generation cover the rest, supported by a day-night storage." style="width:400px"></a>
 
 <a href="doc/img/comparison.png"><img src="doc/img/comparison.png" alt="Bar chart of cumulated annual electricity generation costs for all 5 scenarios defined in runme.py." style="width:400px"></a>
 
