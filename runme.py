@@ -16,12 +16,12 @@ def scenario_base(data):
 def scenario_utility_cost_only(data):
     # increase the cost to discourage their use
     pro = data['process']
-    pro.loc[('Node_1', 'Photovoltaics'), 'inv-cost'] *= 1000000
-    pro.loc[('Node_2', 'Photovoltaics'), 'inv-cost'] *= 1000000
-    pro.loc[('Node_1', 'Photovoltaics'), 'fix-cost'] *= 1000000
-    pro.loc[('Node_2', 'Photovoltaics'), 'fix-cost'] *= 1000000
-    pro.loc[('Node_1', 'Photovoltaics'), 'var-cost'] *= 1000000
-    pro.loc[('Node_2', 'Photovoltaics'), 'var-cost'] *= 1000000
+    pro.loc[('Node_1', 'Photovoltaics'), 'inv-cost'] *= 10
+    pro.loc[('Node_2', 'Photovoltaics'), 'inv-cost'] *= 10
+    pro.loc[('Node_1', 'Photovoltaics'), 'fix-cost'] *= 10
+    pro.loc[('Node_2', 'Photovoltaics'), 'fix-cost'] *= 10
+    pro.loc[('Node_1', 'Photovoltaics'), 'var-cost'] *= 10
+    pro.loc[('Node_2', 'Photovoltaics'), 'var-cost'] *= 10
     return data
 
 
@@ -65,7 +65,7 @@ def run_scenario(input_file, timesteps, scenario, result_dir,
 
     Args:
         input_file: filename to an Excel spreadsheet for MvsoModel.read_excel
-        timesteps: a list of timesteps, e.g. range(0,8761)
+        timesteps: a list of timesteps, e.g. range(0,35040)
         scenario: a scenario function that modifies the input data dict
         result_dir: directory name for result spreadsheet and plots
         plot_tuples: (optional) list of plot tuples (c.f. MvsoModel.result_figures)
