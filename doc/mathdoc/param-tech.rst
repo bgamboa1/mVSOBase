@@ -111,12 +111,12 @@ General Technical Parameters
         doc='Pre-factor for variable costs and emissions for an annual result')
 		
 
-**Timestep Duration**, :math:`\Delta t`, ``dt``: The variable :math:`\Delta t` represents the duration between two sequential timesteps :math:`t_x` and :math:`t_{x+1}`. This is calculated by the subtraction of smaller one from the bigger of the two sequential timesteps :math:`\Delta t = t_{x+1} - t_x`. This variable is the unit of time for the optimization model This variable is expressed in the unit h and by default the value is set to ``1``. In script ``model.py`` this variable is defined by the model variable ``dt`` and initialized by the following code fragment:
+**Timestep Duration**, :math:`\Delta t`, ``dt``: The variable :math:`\Delta t` represents the duration between two sequential timesteps :math:`t_x` and :math:`t_{x+1}`. This is calculated by the subtraction of smaller one from the bigger of the two sequential timesteps :math:`\Delta t = t_{x+1} - t_x`. This variable is the unit of time for the optimization model This variable is expressed in the unit h15-minute and by default the value is set to ``0.25``. In script ``model.py`` this variable is defined by the model variable ``dt`` and initialized by the following code fragment:
 ::
 
     m.dt = pyomo.Param(
         initialize=dt,
-        doc='Time step duration (in 15-minutes), default: 1')
+        doc='Time step duration (in 15-minutes), default: 0.25')
 		
 
 Commodity Technical Parameters
