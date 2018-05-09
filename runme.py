@@ -13,11 +13,15 @@ def scenario_base(data):
     return data
 
 
-def scenario_Node_2_process_caps(data):
-    # change maximum installable capacity
+def scenario_utility_cost_only(data):
+    # increase the cost to discourage their use
     pro = data['process']
-    pro.loc[('Node_2', 'Gas plant'), 'cap-up'] *= 0.5
-    pro.loc[('Node_2', 'Biomass plant'), 'cap-up'] *= 0.25
+    pro.loc[('Node_1', 'Photovoltaics'), 'inv-cost'] *= 1000000
+    pro.loc[('Node_2', 'Photovoltaics'), 'inv-cost'] *= 1000000
+    pro.loc[('Node_1', 'Photovoltaics'), 'fix-cost'] *= 1000000
+    pro.loc[('Node_2', 'Photovoltaics'), 'fix-cost'] *= 1000000
+    pro.loc[('Node_1', 'Photovoltaics'), 'var-cost'] *= 1000000
+    pro.loc[('Node_2', 'Photovoltaics'), 'var-cost'] *= 1000000
     return data
 
 
@@ -124,7 +128,7 @@ if __name__ == '__main__':
     shutil.copy(__file__, result_dir)
 
     # simulation timesteps
-    (offset, length) = (0, 192)  # time step selection
+    (offset, length) = (3552, 500)  # time step selection
     timesteps = range(offset, offset+length+1)
 
     # plotting commodities/sites
@@ -159,7 +163,7 @@ if __name__ == '__main__':
     # select scenarios to be run
     scenarios = [
         scenario_base,
-        scenario_Node_2_process_caps]
+        scenario_utility_cost_only]
 
     for scenario in scenarios:
         prob = run_scenario(input_file, timesteps, scenario, result_dir,
