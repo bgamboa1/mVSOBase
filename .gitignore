@@ -3,6 +3,6 @@
 result/*
 results/*
 doc/_build/*
-_pycache_/*
+mVSOModel/_pycache_/*
 *.vscode
 .vscode/settings.json
