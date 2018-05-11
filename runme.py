@@ -16,12 +16,12 @@ def scenario_base(data):
 def scenario_utility_cost_only(data):
     # increase the cost to discourage their use
     pro = data['process']
-    pro.loc[('Node_1', 'Photovoltaics'), 'inv-cost'] *= 10
-    pro.loc[('Node_2', 'Photovoltaics'), 'inv-cost'] *= 10
-    pro.loc[('Node_1', 'Photovoltaics'), 'fix-cost'] *= 10
-    pro.loc[('Node_2', 'Photovoltaics'), 'fix-cost'] *= 10
-    pro.loc[('Node_1', 'Photovoltaics'), 'var-cost'] *= 10
-    pro.loc[('Node_2', 'Photovoltaics'), 'var-cost'] *= 10
+    pro.loc[('Node_1', 'Photovoltaics'), 'inv-cost'] *= 1
+    pro.loc[('Node_2', 'Photovoltaics'), 'inv-cost'] *= 1
+    pro.loc[('Node_1', 'Photovoltaics'), 'fix-cost'] *= 1
+    pro.loc[('Node_2', 'Photovoltaics'), 'fix-cost'] *= 1
+    pro.loc[('Node_1', 'Photovoltaics'), 'var-cost'] *= 1
+    pro.loc[('Node_2', 'Photovoltaics'), 'var-cost'] *= 1
     return data
 
 
@@ -118,7 +118,7 @@ def run_scenario(input_file, timesteps, scenario, result_dir,
     return prob
 
 if __name__ == '__main__':
-    input_file = 'macerich.xlsx'
+    input_file = 'Site_Setup.xlsx'
     result_name = os.path.splitext(input_file)[0]  # cut away file extension
     result_dir = prepare_result_directory(result_name)  # name + time stamp
 
@@ -128,7 +128,7 @@ if __name__ == '__main__':
     shutil.copy(__file__, result_dir)
 
     # simulation timesteps
-    (offset, length) = (3552, 500)  # time step selection
+    (offset, length) = (0, 96)  # time step selection
     timesteps = range(offset, offset+length+1)
 
     # plotting commodities/sites

@@ -5,7 +5,7 @@ from .modelhelper import *
 from .input import *
 
 
-def create_model(data, timesteps=None, dt=1, dual=False):
+def create_model(data, timesteps=None, dt=0.25, dual=False):
     """Create a pyomo ConcreteModel MvsoModel object from given input data.
 
     Args:
